@@ -12,3 +12,7 @@ models(user model)
 
 <!-- ========registration(Frontend) -->
  
+ <!-- ===========userlogin (Fronend) -->
+
+ =>utils=>authOption.js
+ =>api>auth>[...nextauth]=>route.js

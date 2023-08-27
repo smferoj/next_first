@@ -1,6 +1,9 @@
+'use client'
 import './globals.css'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { SessionProvider } from 'next-auth/react';
+import TopNav from './components/TopNav';
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
 export const metadata = {
@@ -11,7 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SessionProvider>
+          <TopNav/>
+        {children}
+        </SessionProvider>
+       
+        </body>
     </html>
   )
 }

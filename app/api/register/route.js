@@ -6,10 +6,8 @@ import bcrypt from "bcrypt";
 export async function POST(req) {
   const _req = await req.json();
   await dbConnect();
-
   try {
     const { name, email, password } = _req;
-
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return NextResponse.json({ err: "Emain taken" }, { status: 409 });
